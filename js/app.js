@@ -21,7 +21,20 @@ UI.searchForm.addEventListener('submit', (e) => {
         const api = new API(artist, song)
         api.consultAPI()
             .then(data => {
-                console.log(data);
+                if(data.response.lyrics) {
+                    // La canción existe
+                    const letter = data.response.lyrics;
+                    UI.divResult.innerHTML = letter;
+                } else {
+                    // La canción no existe
+                    UI.divMessages.innerHTML = 'Canción no encontrada, prueba con otra búsqueda';
+                    UI.divMessages.classList.add('error');
+                    setTimeout(() => {
+                        UI.divMessages.innerHTML = '';
+                        UI.divMessages.remove('error');
+                        UI.searchForm.reset();
+                    }, 3000);
+                }
             })
     }   
 })
