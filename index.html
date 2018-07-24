@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- METATAGS -->
@@ -7,14 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- STYLES -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Letters</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+    <title>Letras de canciones</title>
 </head>
 
 <body>
 
+    <main id="content" class="content">
+        <h1>Letras de Canciones</h1>
+        <div class="container">
+            <div id="search" class="search">
+                <h2>Búsqueda</h2>
+                <p>Busca por artista y nombre:</p>
+                <p>
+                    <span> * </span>Obligatorio</p>
+                <form action="#" id="search-form">
+                    <div class="input">
+                        <label for="artist">Artista:
+                            <span>*</span>
+                        </label>
+                        <input type="text" id="artist" placeholder="Artista">
+                    </div>
+                    <div class="input">
+                        <label for="song">Canción:
+                            <span>*</span>
+                        </label>
+                        <input type="text" id="song" placeholder="Nombre Canción">
+                    </div>
+
+                    <div class="input submit">
+                        <input type="submit" value="Buscar">
+                    </div>
+
+                    <div id="messages"></div>
+                </form>
+            </div>
+            <div class="result-letter">
+                <h2>Resultado</h2>
+                <div id="result"></div>
+            </div>
+        </div>
+    </main>
+
     <!-- SCRIPTS -->
     <script src="js/app.js" type="module"></script>
+
 </body>
 
 </html>
