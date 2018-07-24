@@ -1,4 +1,4 @@
-
+import { API } from './api.js';
 import * as UI from './ui.js';
 
 UI.searchForm.addEventListener('submit', (e) => {
@@ -18,5 +18,10 @@ UI.searchForm.addEventListener('submit', (e) => {
         }, 3000);
     } else {
         // El formulario esta completo realizar consulta de la API
+        const api = new API(artist, song)
+        api.consultAPI()
+            .then(data => {
+                console.log(data);
+            })
     }   
 })
